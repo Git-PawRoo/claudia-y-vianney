@@ -467,7 +467,64 @@ input {
     line-height: 0;
 }
 
-.polaroids {
+.polaroids-grupo {
+  width: 116%;
+  max-width: none;
+
+  margin-left: -8%;
+  margin-right: -8%;
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+}
+
+.polaroid-item {
+  width: 36%;
+  height: auto;
+
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  display: block;
+}
+
+.polaroid-1 {
+  transform: translateY(28px) rotate(-4deg);
+  margin-right: -4%;
+}
+
+.polaroid-2 {
+  transform: translateY(28px) rotate(0deg);
+  z-index: 2;
+}
+
+.polaroid-3 {
+  transform: translateY(28px) rotate(4deg);
+  margin-left: -4%;
+}
+
+.polaroid-item.visible {
+  opacity: 1;
+}
+
+.polaroid-1.visible {
+  transform: translateY(0) rotate(-4deg);
+}
+
+.polaroid-2.visible {
+  transform: translateY(0) rotate(0deg);
+}
+
+.polaroid-3.visible {
+  transform: translateY(0) rotate(4deg);
+}
 
     width: 116%;
     max-width: none;
@@ -1787,11 +1844,25 @@ id="invitacion"
     </h2>
 
 
-    <img
-    src="ELEMENTOS/polaroid.png"
-    class="polaroids"
-    alt=""
-    >
+    <div class="polaroids-grupo">
+  <img
+    src="ELEMENTOS/polaroid1.png"
+    class="polaroid-item polaroid-1"
+    alt="Nuestro viaje más memorable"
+  >
+
+  <img
+    src="ELEMENTOS/polaroid 2.png"
+    class="polaroid-item polaroid-2"
+    alt="Cuando dijimos que sí"
+  >
+
+  <img
+    src="ELEMENTOS/polaroid 3.png"
+    class="polaroid-item polaroid-3"
+    alt="Nuestras aventuras"
+  >
+</div>
 
 
     <p class="frase">
@@ -2983,6 +3054,43 @@ botonMusica.addEventListener("click", function () {
   }
 });
    });
+   const polaroids = document.querySelectorAll(".polaroid-item");
+
+const observerPolaroids = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+
+    if (entry.isIntersecting) {
+
+      polaroids.forEach(function(polaroid, index) {
+
+        setTimeout(function() {
+          polaroid.classList.add("visible");
+        }, index * 450);
+
+      });
+
+      observerPolaroids.unobserve(entry.target);
+    }
+
+  });
+}, {
+  threshold: 0.3
+});
+
+const grupoPolaroids = document.querySelector(".polaroids-grupo");
+
+if (grupoPolaroids) {
+  observerPolaroids.observe(grupoPolaroids);
+}
+   document.addEventListener("visibilitychange", function () {
+  const musicaBoda = document.getElementById("musicaBoda");
+  const botonMusica = document.getElementById("botonMusica");
+
+  if (document.hidden && !musicaBoda.paused) {
+    musicaBoda.pause();
+    botonMusica.textContent = "🔇";
+  }
+});
 </script>
 <audio id="musicaBoda" loop preload="auto">
   <source src="ELEMENTOS/cancion.mp3" type="audio/mpeg">

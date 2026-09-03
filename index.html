@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
 <title>Claudia & Vianney</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Corinthia:wght@400;700&family=Manrope:wght@300;400;500;600&display=swap"
-rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-/* =========================================
-   GENERAL
-========================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+:root { color-scheme: only light; }
 html,
 body {
     margin: 0;
@@ -37,6 +19,7 @@ body {
 }
 
 body {
+    color-scheme: only light;
     font-family: "Manrope", sans-serif;
     background: #F8F5F0;
     color: #292929;
@@ -71,10 +54,10 @@ input {
 
     background:
         linear-gradient(
-            rgba(23, 76, 67, 0.82),
-            rgba(23, 76, 67, 0.82)
+            rgba(23, 76, 67, 0.10),
+            rgba(23, 76, 67, 0.10)
         ),
-        url("ELEMENTOS/foto portada.png");
+        url("ELEMENTOS/fondo_clauyvinny.png");
 
     background-size: cover;
     background-position: center 35%;
@@ -1632,6 +1615,112 @@ font-weight: 400 !important;
 
 
 /* =========================================
+   DETALLES NUEVOS
+========================================= */
+
+.rainbow-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: -16px auto 28px;
+}
+.rainbow-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: .58;
+}
+.rainbow-dots span:nth-child(1){background:#d86d74;}
+.rainbow-dots span:nth-child(2){background:#dfa06c;}
+.rainbow-dots span:nth-child(3){background:#d9c66b;}
+.rainbow-dots span:nth-child(4){background:#78a888;}
+.rainbow-dots span:nth-child(5){background:#6f91b9;}
+.rainbow-dots span:nth-child(6){background:#9a7aa8;}
+
+.dress-code { position: relative; padding: 12px 0 20px; overflow: hidden; }
+.dress-visual {
+    position: relative;
+    min-height: 330px;
+    margin: 6px auto 12px;
+}
+.dress-personas {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+    padding-top: 18px;
+}
+.dress-persona { width: 36%; max-width: 145px; height: auto; display:block; }
+.dress-mini { position:absolute; z-index:3; height:auto; }
+.dress-mono { width: 44px; left: 22%; top: 10px; transform: rotate(-7deg); }
+.dress-vestido { width: 47px; right: 19%; top: 12px; transform: rotate(5deg); }
+.dress-flor { position:absolute; z-index:1; pointer-events:none; }
+.dress-flor-izq { width: 38%; left:-38px; bottom:-5px; transform: rotate(-8deg); }
+.dress-flor-der { width: 34%; right:-34px; top:38px; transform: rotate(8deg); }
+.dress-nota { max-width: 310px; margin: 8px auto 14px; font-size:12px; line-height:1.5; color:#555; }
+
+.aviso-especial {
+    position: relative;
+    margin: 10px auto 42px;
+    padding: 26px 24px;
+    max-width: 330px;
+    border-top: 1px solid #D8C3A5;
+    border-bottom: 1px solid #D8C3A5;
+}
+.aviso-especial h2 {
+    margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:27px; font-weight:500;
+}
+.aviso-especial p { margin:0; font-size:12px; line-height:1.6; }
+.aviso-especial .manuscrita { display:block; font-size:37px; line-height:.9; margin-bottom:8px; }
+
+.invitacion-personal {
+    margin: 4px auto 25px;
+    padding: 16px 18px;
+    max-width: 300px;
+    text-align:center;
+    font-size:12px;
+    line-height:1.6;
+    border-top:1px solid #D8C3A5;
+    border-bottom:1px solid #D8C3A5;
+}
+
+.boleto-wrapper {
+    display:none;
+    margin: 28px auto 8px;
+    width:100%;
+    max-width:390px;
+    text-align:center;
+}
+.boleto-titulo {
+    margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:25px; font-weight:500;
+}
+.boleto { position:relative; width:100%; margin:0 auto; }
+.boleto-base { width:100%; height:auto; display:block; }
+.boleto-datos {
+    position:absolute;
+    left:12%;
+    top:43%;
+    width:60%;
+    transform:translateY(-50%);
+    text-align:center;
+    color:#174C43;
+    pointer-events:none;
+}
+.boleto-nombre {
+    font-family:"Cormorant Garamond",serif; font-size:clamp(17px,5vw,24px); font-weight:600; line-height:1.05;
+}
+.boleto-personas { margin-top:7px; font-size:9px; letter-spacing:1.5px; font-weight:600; }
+.boleto-intransferible { margin-top:3px; font-size:7px; letter-spacing:.7px; text-transform:uppercase; }
+
+/* Refuerzo para navegadores que intentan forzar modo oscuro */
+html, body, .invitacion, .contenido-invitacion { color-scheme: only light !important; }
+body, .invitacion { background-color:#F8F5F0 !important; color:#292929 !important; }
+input, button { color-scheme: only light !important; }
+.input-nombre { color:#292929 !important; -webkit-text-fill-color:#292929 !important; }
+
+/* =========================================
    RESPONSIVE
 ========================================= */
 
@@ -1806,11 +1895,11 @@ id="invitacion"
 
 
     <div class="mensaje-boda">
+        Queremos celebrar nuestro amor rodeadas de las personas que han sido parte de nuestro camino y tu presencia hará que este día sea todavía más especial.
+    </div>
 
-        Con mucha alegría y corazón<br>
-        te invitamos a celebrar<br>
-        nuestro matrimonio
-
+    <div class="rainbow-dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
 
@@ -2155,54 +2244,44 @@ id="invitacion"
     <!-- DRESS CODE -->
 
     <section class="dress-code">
-
-
         <h2 class="titulo-dress">
-
-            Dress
-
-            <span class="manuscrita">
-                code
-            </span>
-
+            Dress <span class="manuscrita">code</span>
         </h2>
 
+        <p class="formal">FORMAL</p>
 
-        <p class="formal">
-            FORMAL
-        </p>
-
-
-        <img
-        src="ELEMENTOS/drescode.png"
-        class="dress-imagen"
-        alt="Vestimenta formal"
-        >
-
+        <div class="dress-visual">
+            <img src="ELEMENTOS/flor 2.png" class="dress-flor dress-flor-izq" alt="">
+            <img src="ELEMENTOS/flor 3.png" class="dress-flor dress-flor-der" alt="">
+            <img src="ELEMENTOS/dresscode-mono.png" class="dress-mini dress-mono" alt="Moño formal">
+            <img src="ELEMENTOS/dresscode-vestido.png" class="dress-mini dress-vestido" alt="Vestido formal">
+            <div class="dress-personas">
+                <img src="ELEMENTOS/dresscode-hombre.png" class="dress-persona" alt="Vestimenta formal masculina">
+                <img src="ELEMENTOS/dresscode-mujer.png" class="dress-persona" alt="Vestimenta formal femenina">
+            </div>
+        </div>
 
         <div class="colores">
-
             <span class="color c1"></span>
             <span class="color c2"></span>
             <span class="color c3"></span>
             <span class="color c4"></span>
             <span class="color c5"></span>
             <span class="color c6"></span>
-
         </div>
-
-
-        <p class="colores-texto">
-            Colores sugeridos
-        </p>
-
-
+        <p class="colores-texto">Colores sugeridos</p>
     </section>
-
 
     <div class="divisor"></div>
 
 
+
+    <!-- CELEBRACIÓN SOLO ADULTOS -->
+    <section class="aviso-especial">
+        <span class="manuscrita">Una noche</span>
+        <h2>para celebrar juntos:</h2>
+        <p>Amamos a los pequeños de nuestras familias, pero en esta ocasión hemos decidido que nuestra celebración sea solo para adultos. Queremos que puedan disfrutar de una noche especial y relajada, ¡y esperamos que ustedes también!</p>
+    </section>
 
     <!-- UBICACIÓN -->
 
@@ -2393,60 +2472,10 @@ id="invitacion"
 
 
             </div>
-
-
-
-            <div
-            class="campo campo-acompanantes"
-            id="campoAcompanantes"
-            >
-
-                <label>
-                    ¿CUÁNTAS PERSONAS TE ACOMPAÑAN?
-                </label>
-
-
-                <div class="acompanantes">
-
-
-                    <button
-                    type="button"
-                    class="persona-btn"
-                    data-personas="1"
-                    >
-                        1
-                    </button>
-
-
-                    <button
-                    type="button"
-                    class="persona-btn"
-                    data-personas="2"
-                    >
-                        2
-                    </button>
-
-
-                    <button
-                    type="button"
-                    class="persona-btn"
-                    data-personas="3"
-                    >
-                        3
-                    </button>
-
-
-                </div>
-
-
+            <div class="invitacion-personal">
+                Con mucho cariño, hemos reservado un lugar especial para ti. La invitación es personal e intransferible. Agradecemos mucho tu comprensión.
             </div>
 
-
-            <input
-            type="hidden"
-            id="numeroPersonas"
-            value=""
-            >
 
 
             <div class="enviar-wrapper">
@@ -2477,6 +2506,17 @@ id="invitacion"
 
         </p>
 
+        <div class="boleto-wrapper" id="boletoWrapper">
+            <p class="boleto-titulo">Tu pase personal ♡</p>
+            <div class="boleto">
+                <img src="ELEMENTOS/boleto sin fondo.png" class="boleto-base" alt="Pase de invitado">
+                <div class="boleto-datos">
+                    <div class="boleto-nombre" id="boletoNombre"></div>
+                    <div class="boleto-personas">1 PERSONA</div>
+                    <div class="boleto-intransferible">Personal e intransferible</div>
+                </div>
+            </div>
+        </div>
 
     </section>
 
@@ -2745,19 +2785,8 @@ botonRegalos.addEventListener(
    RSVP
 ========================================= */
 
-const personaBtns =
-document.querySelectorAll(".persona-btn");
-
-const numeroPersonas =
-document.getElementById("numeroPersonas");
-
-const campoAcompanantes =
-document.getElementById("campoAcompanantes");
-
 const radiosAsistencia =
-document.querySelectorAll(
-    'input[name="asistencia"]'
-);
+document.querySelectorAll('input[name="asistencia"]');
 
 const rsvpForm =
 document.getElementById("rsvpForm");
@@ -2768,108 +2797,33 @@ document.getElementById("mensajeConfirmado");
 const botonEnviar =
 document.getElementById("botonEnviar");
 
+const boletoWrapper =
+document.getElementById("boletoWrapper");
 
-/* =========================================
-   PERSONAS
-========================================= */
+const boletoNombre =
+document.getElementById("boletoNombre");
 
-personaBtns.forEach(
-function(boton) {
-
-    boton.addEventListener(
-    "click",
-    function() {
-
-        personaBtns.forEach(
-        function(b) {
-
-            b.classList.remove("activo");
-
-        });
-
-        boton.classList.add("activo");
-
-        numeroPersonas.value =
-            boton.dataset.personas;
-
-    }
-    );
-
+function mostrarBoleto(nombre) {
+    boletoNombre.textContent = nombre;
+    boletoWrapper.style.display = "block";
 }
-);
-
-
-
-/* =========================================
-   SI DICE NO → 0 PERSONAS
-========================================= */
-
-radiosAsistencia.forEach(
-function(radio) {
-
-    radio.addEventListener(
-    "change",
-    function() {
-
-        if (
-            this.value === "no"
-        ) {
-
-            numeroPersonas.value = "0";
-
-            campoAcompanantes
-            .classList
-            .add("desactivado");
-
-
-            personaBtns.forEach(
-            function(boton) {
-
-                boton.classList.remove(
-                    "activo"
-                );
-
-            });
-
-        } else {
-
-            numeroPersonas.value = "";
-
-            campoAcompanantes
-            .classList
-            .remove("desactivado");
-
-        }
-
-    }
-    );
-
-}
-);
-
-
 
 /* =========================================
    SI YA CONFIRMÓ EN ESTE NAVEGADOR
 ========================================= */
 
-const yaConfirmo =
-localStorage.getItem(
-    "rsvpClaudiaVianney"
-);
+const yaConfirmo = localStorage.getItem("rsvpClaudiaVianney");
+const nombreGuardado = localStorage.getItem("rsvpClaudiaVianneyNombre");
+const asistenciaGuardada = localStorage.getItem("rsvpClaudiaVianneyAsiste");
 
-
-if (
-    yaConfirmo === "confirmado"
-) {
-
+if (yaConfirmo === "confirmado") {
     rsvpForm.style.display = "none";
+    mensajeConfirmado.style.display = "block";
 
-    mensajeConfirmado.style.display =
-        "block";
-
+    if (asistenciaGuardada === "si" && nombreGuardado) {
+        mostrarBoleto(nombreGuardado);
+    }
 }
-
 
 
 /* =========================================
@@ -2922,30 +2876,7 @@ async function(event) {
     const asiste =
         asistenciaSeleccionada.value;
 
-
-    let personas =
-        numeroPersonas.value;
-
-
-    if (
-        asiste === "si" &&
-        !personas
-    ) {
-
-        alert(
-            "Selecciona cuántas personas te acompañan."
-        );
-
-        return;
-    }
-
-
-    if (
-        asiste === "no"
-    ) {
-
-        personas = "0";
-    }
+    const personas = asiste === "si" ? "1" : "0";
 
 
     const datos =
@@ -2989,18 +2920,22 @@ async function(event) {
         );
 
 
-        localStorage.setItem(
-            "rsvpClaudiaVianney",
-            "confirmado"
-        );
+        localStorage.setItem("rsvpClaudiaVianney", "confirmado");
+        localStorage.setItem("rsvpClaudiaVianneyNombre", nombre);
+        localStorage.setItem("rsvpClaudiaVianneyAsiste", asiste);
 
 
         rsvpForm.style.display =
             "none";
 
 
-        mensajeConfirmado.style.display =
-            "block";
+        mensajeConfirmado.style.display = "block";
+
+        if (asiste === "si") {
+            mostrarBoleto(nombre);
+        } else {
+            boletoWrapper.style.display = "none";
+        }
 
 
     } catch (error) {
@@ -3081,7 +3016,7 @@ if (grupoPolaroids) {
 });
 </script>
 <audio id="musicaBoda" loop preload="auto">
-  <source src="ELEMENTOS/cancion.mp3" type="audio/mpeg">
+  <source src="ELEMENTOS/Bendita Tu Luz - Release.mp3" type="audio/mpeg">
 </audio>
    <button id="botonMusica" class="boton-musica" aria-label="Activar o pausar música">
   🎵

@@ -54,8 +54,8 @@ input {
 
     background:
         linear-gradient(
-            rgba(23, 76, 67, 0.10),
-            rgba(23, 76, 67, 0.10)
+            rgba(23, 76, 67, 0.80),
+            rgba(23, 76, 67, 0.80)
         ),
         url("ELEMENTOS/fondo_clauyvinny.png");
 
@@ -1143,7 +1143,7 @@ font-weight: 400 !important;
     height: auto;
 
     right: -20px;
-    top: 12px;
+    top: -18px;
 
     z-index: 1;
 }
@@ -1637,43 +1637,72 @@ font-weight: 400 !important;
 .rainbow-dots span:nth-child(5){background:#6f91b9;}
 .rainbow-dots span:nth-child(6){background:#9a7aa8;}
 
-.dress-code { position: relative; padding: 12px 0 20px; overflow: hidden; }
-.dress-visual {
+.dress-code {
     position: relative;
-    min-height: 330px;
-    margin: 6px auto 12px;
+    padding: 12px 8px 24px;
+    overflow: hidden;
 }
-.dress-personas {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 18px;
-    padding-top: 18px;
+.dress-code .titulo-dress { text-transform: uppercase; letter-spacing: 3px; font-size: 29px; }
+.dress-code .titulo-dress .manuscrita { text-transform:none; letter-spacing:0; color:#2F62A8; }
+.dress-subtitulo {
+    margin: 2px 0 10px;
+    font-family:"Corinthia",cursive;
+    font-size:38px;
+    line-height:1;
+    color:#174C43;
 }
-.dress-persona { width: 36%; max-width: 145px; height: auto; display:block; }
-.dress-mini { position:absolute; z-index:3; height:auto; }
-.dress-mono { width: 44px; left: 22%; top: 10px; transform: rotate(-7deg); }
-.dress-vestido { width: 47px; right: 19%; top: 12px; transform: rotate(5deg); }
+.dress-intro {
+    max-width:340px;
+    margin:0 auto 20px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:13px;
+    line-height:1.45;
+}
+.dress-composicion {
+    position:relative;
+    display:grid;
+    grid-template-columns: 23% 27% 27% 23%;
+    align-items:end;
+    width:100%;
+    min-height:330px;
+    margin:0 auto;
+}
+.dress-figura { width:100%; height:auto; display:block; align-self:end; position:relative; z-index:2; }
+.dress-figura-hombre { transform:scale(1.02); transform-origin:bottom center; }
+.dress-figura-mujer { transform:scale(1.10); transform-origin:bottom center; }
+.dress-columna {
+    align-self:center;
+    position:relative;
+    z-index:3;
+    padding:0 5px;
+    font-family:"Cormorant Garamond",serif;
+    color:#292929;
+    font-size:10.5px;
+    line-height:1.28;
+}
+.dress-columna:first-of-type { border-right:1px solid #D8C3A5; }
+.dress-icono { display:block; height:31px; width:auto; margin:0 auto 7px; object-fit:contain; }
+.dress-columna h3 { margin:0 0 8px; color:#174C43; font-size:13px; letter-spacing:.7px; font-weight:600; }
+.dress-regla { width:64%; height:1px; background:#D8C3A5; margin:7px auto; position:relative; }
+.dress-regla::after { content:""; position:absolute; width:4px; height:4px; border-radius:50%; background:#AD9471; left:50%; top:50%; transform:translate(-50%,-50%); }
+.dress-columna p { margin:0; }
+.dress-footer { max-width:320px; margin:18px auto 0; font-family:"Cormorant Garamond",serif; font-size:12px; line-height:1.4; }
+.dress-footer::before { content:"♡"; display:block; color:#174C43; font-size:20px; margin-bottom:4px; }
 .dress-flor { position:absolute; z-index:1; pointer-events:none; }
-.dress-flor-izq { width: 38%; left:-38px; bottom:-5px; transform: rotate(-8deg); }
-.dress-flor-der { width: 34%; right:-34px; top:38px; transform: rotate(8deg); }
-.dress-nota { max-width: 310px; margin: 8px auto 14px; font-size:12px; line-height:1.5; color:#555; }
+.dress-flor-izq { width:31%; left:-46px; bottom:-10px; transform:rotate(-8deg); }
+.dress-flor-der { width:28%; right:-42px; top:115px; transform:rotate(7deg); }
 
 .aviso-especial {
     position: relative;
-    margin: 10px auto 42px;
-    padding: 26px 24px;
+    margin: 0 auto 42px;
+    padding: 20px 24px 26px;
     max-width: 330px;
-    border-top: 1px solid #D8C3A5;
+    border-top: 0;
     border-bottom: 1px solid #D8C3A5;
 }
-.aviso-especial h2 {
-    margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:27px; font-weight:500;
-}
+.aviso-especial h2 { margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:27px; font-weight:500; }
 .aviso-especial p { margin:0; font-size:12px; line-height:1.6; }
-.aviso-especial .manuscrita { display:block; font-size:37px; line-height:.9; margin-bottom:8px; }
+.aviso-especial .manuscrita { display:block; color:#2F62A8; font-size:37px; line-height:.9; margin-bottom:8px; }
 
 .invitacion-personal {
     margin: 4px auto 25px;
@@ -1686,33 +1715,25 @@ font-weight: 400 !important;
     border-bottom:1px solid #D8C3A5;
 }
 
-.boleto-wrapper {
-    display:none;
-    margin: 28px auto 8px;
-    width:100%;
-    max-width:390px;
-    text-align:center;
-}
-.boleto-titulo {
-    margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:25px; font-weight:500;
-}
+.boleto-wrapper { display:none; margin:28px auto 8px; width:100%; max-width:390px; text-align:center; }
+.boleto-titulo { margin:0 0 12px; color:#174C43; font-family:"Cormorant Garamond",serif; font-size:25px; font-weight:500; }
 .boleto { position:relative; width:100%; margin:0 auto; }
 .boleto-base { width:100%; height:auto; display:block; }
-.boleto-datos {
-    position:absolute;
-    left:12%;
-    top:43%;
-    width:60%;
-    transform:translateY(-50%);
-    text-align:center;
-    color:#174C43;
-    pointer-events:none;
-}
+.boleto-datos { position:absolute; inset:0; color:#174C43; pointer-events:none; }
 .boleto-nombre {
-    font-family:"Cormorant Garamond",serif; font-size:clamp(17px,5vw,24px); font-weight:600; line-height:1.05;
+    position:absolute; left:13%; top:36%; width:58%;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(13px,3.7vw,18px); font-weight:600; line-height:1.05;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-.boleto-personas { margin-top:7px; font-size:9px; letter-spacing:1.5px; font-weight:600; }
-.boleto-intransferible { margin-top:3px; font-size:7px; letter-spacing:.7px; text-transform:uppercase; }
+.boleto-personas {
+    position:absolute; left:15%; top:48%; width:54%;
+    font-size:8px; letter-spacing:1.4px; font-weight:600;
+}
+.boleto-intransferible {
+    position:absolute; left:15%; top:54%; width:54%;
+    font-size:6.5px; letter-spacing:.55px; text-transform:uppercase;
+}
 
 /* Refuerzo para navegadores que intentan forzar modo oscuro */
 html, body, .invitacion, .contenido-invitacion { color-scheme: only light !important; }
@@ -2244,36 +2265,41 @@ id="invitacion"
     <!-- DRESS CODE -->
 
     <section class="dress-code">
-        <h2 class="titulo-dress">
-            Dress <span class="manuscrita">code</span>
-        </h2>
+        <h2 class="titulo-dress">DRESS <span class="manuscrita">code</span></h2>
+        <p class="dress-subtitulo">Formal de jardín</p>
+        <p class="dress-intro">Nos encantaría que nos acompañaran vistiendo de manera formal y elegante para celebrar este día tan especial.</p>
 
-        <p class="formal">FORMAL</p>
+        <img src="ELEMENTOS/flor 2.png" class="dress-flor dress-flor-izq" alt="">
+        <img src="ELEMENTOS/flor 3.png" class="dress-flor dress-flor-der" alt="">
 
-        <div class="dress-visual">
-            <img src="ELEMENTOS/flor 2.png" class="dress-flor dress-flor-izq" alt="">
-            <img src="ELEMENTOS/flor 3.png" class="dress-flor dress-flor-der" alt="">
-            <img src="ELEMENTOS/dresscode-mono.png" class="dress-mini dress-mono" alt="Moño formal">
-            <img src="ELEMENTOS/dresscode-vestido.png" class="dress-mini dress-vestido" alt="Vestido formal">
-            <div class="dress-personas">
-                <img src="ELEMENTOS/dresscode-hombre.png" class="dress-persona" alt="Vestimenta formal masculina">
-                <img src="ELEMENTOS/dresscode-mujer.png" class="dress-persona" alt="Vestimenta formal femenina">
+        <div class="dress-composicion">
+            <img src="ELEMENTOS/dresscode-hombre.png" class="dress-figura dress-figura-hombre" alt="Vestimenta formal masculina">
+
+            <div class="dress-columna">
+                <img src="ELEMENTOS/dresscode-mono.png" class="dress-icono" alt="">
+                <h3>CABALLEROS</h3>
+                <div class="dress-regla"></div>
+                <p>Traje formal.</p>
+                <div class="dress-regla"></div>
+                <p>Favor de evitar los colores azul, gris y beige, ya que serán utilizados por las novias y personas clave de la celebración.</p>
             </div>
+
+            <div class="dress-columna">
+                <img src="ELEMENTOS/dresscode-vestido.png" class="dress-icono" alt="">
+                <h3>DAMAS</h3>
+                <div class="dress-regla"></div>
+                <p>Vestido formal o cóctel elegante.</p>
+                <div class="dress-regla"></div>
+                <p>Favor de evitar los colores blanco, beige o rojo, reservados para momentos y participantes especiales del evento.</p>
+            </div>
+
+            <img src="ELEMENTOS/dresscode-mujer.png" class="dress-figura dress-figura-mujer" alt="Vestimenta formal femenina">
         </div>
 
-        <div class="colores">
-            <span class="color c1"></span>
-            <span class="color c2"></span>
-            <span class="color c3"></span>
-            <span class="color c4"></span>
-            <span class="color c5"></span>
-            <span class="color c6"></span>
-        </div>
-        <p class="colores-texto">Colores sugeridos</p>
+        <p class="dress-footer">Agradecemos mucho su apoyo para mantener la armonía visual de nuestra celebración.</p>
     </section>
 
     <div class="divisor"></div>
-
 
 
     <!-- CELEBRACIÓN SOLO ADULTOS -->
@@ -2318,7 +2344,7 @@ id="invitacion"
 
         <a
         class="boton"
-        href="https://www.google.com/maps/search/?api=1&query=Comunidad+Teologica+de+Mexico+San+Jeronimo+Eje+10+Sur+137+CDMX"
+        href="https://maps.app.goo.gl/qkmkksa4rGx5tqoh7"
         target="_blank"
         rel="noopener"
         >

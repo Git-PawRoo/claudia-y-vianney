@@ -1692,8 +1692,7 @@ font-weight: 400 !important;
 .dress-footer { position:relative; z-index:3; max-width:285px; margin:18px auto 0; padding:0 8px; font-family:"Cormorant Garamond",serif; font-size:12px; line-height:1.4; }
 .dress-footer::before { content:"♡"; display:block; color:#174C43; font-size:20px; margin-bottom:4px; }
 .dress-flor { position:absolute; z-index:1; pointer-events:none; }
-.dress-flor-izq { width:20%; left:10px; bottom:8px; transform:rotate(-8deg); }
-.dress-flor-der { width:28%; right:-42px; top:115px; transform:rotate(7deg); }
+.dress-flor-der { width:26%; right:2px; top:115px; transform:rotate(7deg); }
 
 .divisor-antes-adultos { margin-bottom: 10px; }
 
@@ -1726,20 +1725,37 @@ font-weight: 400 !important;
 .boleto-base { width:100%; height:auto; display:block; }
 .boleto-datos { position:absolute; inset:0; color:#174C43; pointer-events:none; }
 .boleto-nombre {
-    position:absolute; left:31.5%; top:67.4%; width:32%;
+    position:absolute;
+    left:17%;
+    top:55%;
+    width:48%;
     transform:translateY(-50%);
-    color:#F8F5F0;
+    color:#174C43;
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(9px,2.7vw,13px); font-weight:600; line-height:1;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    font-size:clamp(12px,3.7vw,18px);
+    font-weight:600;
+    line-height:1.05;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    text-align:center;
 }
 .boleto-personas {
-    position:absolute; left:29%; top:47.2%; width:29%;
-    font-size:8px; letter-spacing:1.4px; font-weight:600;
+    position:absolute;
+    left:20%;
+    top:64%;
+    width:42%;
+    font-size:clamp(7px,2.1vw,10px);
+    letter-spacing:1.5px;
+    font-weight:600;
 }
 .boleto-intransferible {
-    position:absolute; left:27%; top:53.7%; width:33%;
-    font-size:6.2px; letter-spacing:.45px; text-transform:uppercase;
+    position:absolute;
+    left:18%;
+    top:70%;
+    width:46%;
+    font-size:clamp(5.5px,1.55vw,7px);
+    letter-spacing:.5px;
+    text-transform:uppercase;
 }
 
 /* Refuerzo para navegadores que intentan forzar modo oscuro */
@@ -1958,21 +1974,21 @@ id="invitacion"
 
     <div class="polaroids-grupo">
   <img
-    src="ELEMENTOS/polaroid1.png"
+    src="ELEMENTOS/polaroid 2.png"
     class="polaroid-item polaroid-1"
-    alt="Nuestro viaje más memorable"
+    alt="Claudia y Vianney"
   >
 
   <img
-    src="ELEMENTOS/polaroid 2.png"
+    src="ELEMENTOS/polaroid-nuestra-historia.png"
     class="polaroid-item polaroid-2"
-    alt="Cuando dijimos que sí"
+    alt="Nuestra historia"
   >
 
   <img
     src="ELEMENTOS/polaroid 3.png"
     class="polaroid-item polaroid-3"
-    alt="Nuestras aventuras"
+    alt="Claudia y Vianney"
   >
 </div>
 
@@ -2283,7 +2299,6 @@ id="invitacion"
         <p class="dress-subtitulo">Formal de jardín</p>
         <p class="dress-intro">Nos encantaría que nos acompañaran vistiendo de manera formal y elegante para celebrar este día tan especial.</p>
 
-        <img src="ELEMENTOS/flor 2.png" class="dress-flor dress-flor-izq" alt="">
         <img src="ELEMENTOS/flor 3.png" class="dress-flor dress-flor-der" alt="">
 
         <div class="dress-composicion">
@@ -2393,9 +2408,11 @@ id="invitacion"
 
 
         <a
-        href="#"
+        href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60039335"
         class="regalo-link"
         id="regaloLink"
+        target="_blank"
+        rel="noopener"
         >
 
             <img
@@ -2409,8 +2426,10 @@ id="invitacion"
 
         <a
         class="boton"
-        href="#"
+        href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60039335"
         id="botonRegalos"
+        target="_blank"
+        rel="noopener"
         >
             VER MESA DE REGALOS
         </a>
@@ -2549,7 +2568,7 @@ id="invitacion"
         <div class="boleto-wrapper" id="boletoWrapper">
             <p class="boleto-titulo">Tu pase personal ♡</p>
             <div class="boleto">
-                <img src="ELEMENTOS/boleto sin fondo.png" class="boleto-base" alt="Pase de invitado">
+                <img src="ELEMENTOS/boleto-pase-invitado.png" class="boleto-base" alt="Pase de invitado">
                 <div class="boleto-datos">
                     <div class="boleto-nombre" id="boletoNombre"></div>
                     <div class="boleto-personas">1 PERSONA</div>
@@ -2780,45 +2799,9 @@ setInterval(
 
 
 /* =========================================
-   MESA DE REGALOS TEMPORAL
+   MESA DE REGALOS
+   Enlaces directos a Liverpool configurados en el HTML.
 ========================================= */
-
-const regaloLink =
-document.getElementById("regaloLink");
-
-const botonRegalos =
-document.getElementById("botonRegalos");
-
-
-function avisoMesa(event) {
-
-    if (
-        event.currentTarget
-        .getAttribute("href")
-        === "#"
-    ) {
-
-        event.preventDefault();
-
-        alert(
-            "Aquí colocaremos el enlace de la mesa de regalos ♡"
-        );
-
-    }
-
-}
-
-
-regaloLink.addEventListener(
-    "click",
-    avisoMesa
-);
-
-botonRegalos.addEventListener(
-    "click",
-    avisoMesa
-);
-
 
 
 /* =========================================

@@ -249,6 +249,7 @@ input {
 ========================================= */
 
 .contenido-invitacion {
+    background-color: #F8F5F0;
 
     width: 100%;
     max-width: 430px;
@@ -1845,6 +1846,53 @@ input, button { color-scheme: only light !important; }
 .boton-musica:hover {
   transform: scale(1.08);
 }
+/* SECCIÓN DESCORCHE LIBRE */
+
+.descorche-libre {
+    position: relative;
+    padding: 55px 35px;
+    text-align: center;
+    background-color: #F8F5F0;
+    overflow: hidden;
+}
+
+.descorche-libre .titulo-seccion {
+    position: relative;
+    z-index: 2;
+    color: #174C43;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+}
+
+.descorche-texto {
+    position: relative;
+    z-index: 2;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 310px;
+    margin: 20px auto 0;
+    color: #292929;
+}
+
+.descorche-flor {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.descorche-flor-izq {
+    left: -15px;
+    top: 15px;
+}
+
+.descorche-flor-der {
+    right: -15px;
+    bottom: 5px;
+}
+
 </style>
 
 </head>
@@ -2236,40 +2284,56 @@ id="invitacion"
             <div class="programa-lista">
 
 
-                <div class="programa-fila">
-                    <div>16:30</div>
-                    <div class="programa-evento">Bienvenida</div>
-                </div>
+              
+<div class="programa-fila">
+    <div>05:00 a 05:30 pm</div>
+    <div class="programa-evento">Recepción de invitados</div>
+</div>
 
+<div class="programa-fila">
+    <div>05:30 a 06:00 pm</div>
+    <div class="programa-evento">Ceremonia</div>
+</div>
 
-                <div class="programa-fila">
-                    <div>17:00</div>
-                    <div class="programa-evento">Ceremonia</div>
-                </div>
+<div class="programa-fila">
+    <div>06:00 a 07:00 pm</div>
+    <div class="programa-evento">Cóctel + Sesión de fotos</div>
+</div>
 
+<div class="programa-fila">
+    <div>07:00 a 08:00 pm</div>
+    <div class="programa-evento">Servicio de alimentos</div>
+</div>
 
-                <div class="programa-fila">
-                    <div>17:45</div>
-                    <div class="programa-evento">Recepción</div>
-                </div>
+<div class="programa-fila">
+    <div>08:00 a 08:30 pm</div>
+    <div class="programa-evento">Palabras / Brindis / Pastel / Vals</div>
+</div>
 
+<div class="programa-fila">
+    <div>08:30 pm</div>
+    <div class="programa-evento">Apertura de pista con DJ</div>
+</div>
 
-                <div class="programa-fila">
-                    <div>19:30</div>
-                    <div class="programa-evento">Cena</div>
-                </div>
+<div class="programa-fila">
+    <div>09:30 pm</div>
+    <div class="programa-evento">Café y postres</div>
+</div>
 
+<div class="programa-fila">
+    <div>11:00 pm</div>
+    <div class="programa-evento">Tornafiesta</div>
+</div>
 
-                <div class="programa-fila">
-                    <div>21:00</div>
-                    <div class="programa-evento">Pastel</div>
-                </div>
+<div class="programa-fila">
+    <div>12:00 am</div>
+    <div class="programa-evento">Finaliza el evento</div>
+</div>
 
-
-                <div class="programa-fila">
-                    <div>22:00</div>
-                    <div class="programa-evento">Fiesta</div>
-                </div>
+<div class="programa-fila">
+    <div>12:00 a 12:30 am</div>
+    <div class="programa-evento">Salida</div>
+</div>
 
 
             </div>
@@ -2322,8 +2386,7 @@ id="invitacion"
                 <div class="dress-regla"></div>
                 <p>Vestido formal o cóctel elegante.</p>
                 <div class="dress-regla"></div>
-                <p>Favor de evitar los colores blanco, beige o rojo, reservados para momentos y participantes especiales del evento.</p>
-            </div>
+              <p>Favor de evitar los colores blanco, beige, verde esmeralda, azul índigo y violeta, reservados para momentos y participantes especiales del evento.</p>
 
             <img src="ELEMENTOS/dresscode-mujer.png" class="dress-figura dress-figura-mujer" alt="Vestimenta formal femenina">
         </div>
@@ -2440,7 +2503,27 @@ id="invitacion"
 
     </section>
 
+<!-- DESCorche LIBRE -->
+<section class="descorche-libre">
 
+    <img src="ELEMENTOS/flor 2.png"
+         class="descorche-flor descorche-flor-izq"
+         alt="">
+
+    <h2 class="titulo-seccion">
+        ¡Tú eliges con qué brindar!
+    </h2>
+
+    <p class="descorche-texto">
+        Contamos con descorche libre para que disfrutes
+        tu bebida favorita durante nuestra celebración.
+    </p>
+
+    <img src="ELEMENTOS/flor 3.png"
+         class="descorche-flor descorche-flor-der"
+         alt="">
+
+</section>
     <img
     src="ELEMENTOS/corazonsvg.svg"
     class="corazon"
